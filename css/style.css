@@ -1,0 +1,180 @@
+:root{
+    --fuentePrincipal: 'Roboto', sans-serif;
+
+    --colorPrincipal: #008A5A;
+    --colorSecundario: #284B63;
+    --colorTerciario: #A1869E;
+
+    --colorFondo: #D9D9D9;
+
+    --blanco: #FFF;
+    --negro: #000;
+
+    --heightHeader: 70px;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--fuentePrincipal);
+    font-size: 16px;
+    font-weight: 400;
+    background-color: var(--colorFondo);
+    color: var(--negro);
+}
+
+/* #region GENERAL*/
+.textoDerecha{
+    text-align: end;
+}
+/* #endregion GENERAL*/
+
+/* #region ENCABEZADOS */
+h1{
+    font-weight: 600;
+    font-size: 4rem;
+    color: #008A5A;
+    text-transform: uppercase;
+}
+/* #endregion ENCABEZADOS*/
+
+
+/* #region HEADER*/
+#header-container{
+    position: fixed;
+    width: 100%;
+    height: var(--heightHeader);
+    padding: 1rem 2rem;
+
+    display: flex;
+    align-items: center;
+
+    background-color: var(--blanco);   
+    z-index: 1;
+}
+
+nav{
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+nav ul{
+    list-style:none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+nav a{
+    text-decoration: none;
+    color: #008A5A;
+    font-weight: 500;
+}
+/* #endregion HEADER*/
+
+/* #region SECCIONES*/
+section{
+    scroll-margin-top: var(--heightHeader);
+}
+section:not(#home), footer{
+    padding: var(--heightHeader);
+}
+/* #endregion SECCIONES*/
+
+/* #region HOME*/
+#home{
+    padding-top: var(--heightHeader);
+
+    background-color: #008A5A;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#homeTexto > h1,h2{
+    color: var(--blanco);
+    text-transform: none;
+}
+
+#homeTexto > h2{
+    font-weight: 300;
+    font-style: italic;
+}
+
+#imagenHome-container{
+    
+}
+
+#imagenHome-container > img{
+    width: 40vw;
+    height: 80vh;
+    object-fit:cover;
+    object-position: top;
+    /*width: 216px;
+    height: 324px;*/
+}
+/* #endregion HOME*/
+
+/* #region ACERCA*/
+#acercaDeMi{
+
+}
+/* #endregion ACERCA*/
+
+/* #region FOOTER*/
+footer{
+    background-color: var(--colorSecundario);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer > h1{
+    color: var(--blanco);
+}
+
+#contacto-form{
+    width: 30vw;
+
+    display: flex;
+    flex-direction: column;
+
+    row-gap: 1rem;
+    margin: 1rem 0;
+}
+
+input, textarea{
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+textarea{
+    resize: none;
+}
+
+#redesSociales-container{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+}
+
+.fa-brands{
+    font-size: 4rem;
+    color: var(--blanco);
+}
+
+/* #endregion FOOTER*/
