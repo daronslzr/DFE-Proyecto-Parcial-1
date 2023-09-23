@@ -5,15 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!--GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--FONTAWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="./css/style.css">
+    <!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <!--Liga a mi JS-->
     <script src="./js/main.js" defer></script>
+
+    <!--Liga a mi estilos-->
+    <link rel="stylesheet" href="./css/style.css">
 
     <title>Mi Portafolio Personal</title>
 
@@ -24,9 +38,9 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#acercaDeMi">Acerca De Mi</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#experienciaLaboral">Experiencia Laboral</a></li>
+                <li class="d-none d-md-block"><a href="#acercaDeMi">Acerca De Mi</a></li>
+                <li class="d-none d-md-block"><a href="#habilidades">Habilidades</a></li>
+                <li class="d-none d-md-block"><a href="#experiencia">Experiencia</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -35,7 +49,7 @@
     <section id="home">
         <div id="homeTexto">
             <h1>Soy Daron Salazar</h1>
-            <h2>Estudiante de Ingenieria En Sistemas de la Información</h2>
+            <h2>Estudiante de Ingenieria En Sistemas de Información</h2>
         </div>
         <div id="imagenHome-container">
             <img src="./img/imagenPersonal/DaronSalazar.jpg" alt="imagenDaron">
@@ -43,49 +57,98 @@
     </section>
 
     <section id="acercaDeMi">
-        <h1 class="textoDerecha">Acerca de mí</h1>
-        <div id="informacionGeneral">
-            <p><span>Nombre Completo:</span></p>
-            <p><span>Estudios Actuales:</span></p>
-            <p><span>Pasatiempos:</span></p>
+        <h1 class="textoDerecha textoCentro">Acerca de mí</h1>
+        <div id="acerca-grid-container">
+            <div class=componenteAcerca>
+                <p><span class="fuenteItalica">Soy estudiante de Ingenieria en Sistemas de Información y poseo
+                        conocimientos en las diferentes áreas
+                        de esta carrera. Mi área favorita es el desarrollo Frontend, ya que me gusta visualizar el
+                        resultado de
+                        mi trabajo al momento. También, debido a mi experiencia laboral, cuento con una gran atención al
+                        detalle
+                        que es muy útil en esta área.</span></p>
+            </div>
+            <div class=componenteAcerca>
+                <p><span class="fuenteNegrita">Nombre Completo: </span>Daron Salazar Beltrán</p>
+                <p><span class="fuenteNegrita">Edad: </span>26 años</p>
+                <p><span class="fuenteNegrita">Lugar de Estudios: </span>Universidad de Sonora</p>
+            </div>
+            <div class=componenteAcerca>
+                <p><span class="fuenteNegrita">Cuando no estudio, me gusta:</span></p>
+                <p>Programar, escuchar música y bailar</p>
+            </div>
         </div>
     </section>
 
     <section id="habilidades">
-        <h1>Habilidades</h1>
-        <div id="habilidades-container">
-            <div class="habilidadesCategoria">
-                <h2>Desarrollo Web</h2>
-                <i class="fa-solid fa-globe"></i>
-                <ul>
-                    <li class="habilidad">HTML</li>
-                    <li class="habilidad">CSS</li>
-                    <li class="habilidad">JavaScript</li>
-                </ul>
+        <h1 class="textoCentro">Habilidades</h1>
+        <div id="habilidadesGeneral-container">
+            <div class="habilidades-container habilidades-container-arriba">
+                <div class="habilidadesCategoria">
+                    <h2>Desarrollo Web</h2>
+                    <i class="fa-solid fa-globe"></i>
+                    <ul>
+                        <li class="habilidad">HTML</li>
+                        <li class="habilidad">CSS</li>
+                        <li class="habilidad">JavaScript</li>
+                    </ul>
+                </div>
+                <div class="habilidadesCategoria">
+                    <h2>Bases de Datos</h2>
+                    <i class="fa-solid fa-database"></i>
+                    <ul>
+                        <li class="habilidad">MySQL</li>
+                    </ul>
+                </div>
+                <div class="habilidadesCategoria">
+                    <h2>Programación</h2>
+                    <i class="fa-solid fa-code"></i>
+                    <ul>
+                        <li class="habilidad">Java</li>
+                        <li class="habilidad">C#</li>
+                    </ul>
+                </div>
             </div>
-            <div class="habilidadesCategoria">
-                <h2>Bases de Datos</h2>
-                <i class="fa-solid fa-database"></i>
-                <ul>
-                    <li class="habilidad">MySQL</li>
-                </ul>
-            </div>
-            <div class="habilidadesCategoria">
-                <h2>Programación</h2>
-                <i class="fa-solid fa-code"></i>
-                <ul>
-                    <li class="habilidad">Java</li>
-                    <li class="habilidad">C#</li>
-                </ul>
+            <div class="habilidades-container habilidades-container-abajo">
+                <div class="habilidadesCategoria">
+                    <h2>Idiomas</h2>
+                    <i class="fa-solid fa-language"></i>
+                    <ul>
+                        <li class="habilidad">Inglés Avanzado</li>
+                        <li class="habilidad">Japonés Básico</li>
+                    </ul>
+                </div>
+                <div class="habilidadesCategoria">
+                    <h2>Soft Skills</h2>
+                    <i class="fa-solid fa-people-group"></i>
+                    <ul>
+                        <li class="habilidad">Comunicación</li>
+                        <li class="habilidad">Atención al Detalle</li>
+                        <li class="habilidad">Adaptabilidad al Cambio</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-
-        
     </section>
 
-    <section id="experienciaLaboral">
-        <h1 class="textoDerecha">Experiencia Laboral</h1>
+    <section id="experiencia">
+        <h1 class="textoDerecha textoCentro">Experiencia Académica</h1>
+        <div id="proyectos-container">
+            <div class="proyecto">
+                <div class="imagenProyecto-container">
+                    <img src="./img/Proyectos/PlayNSing/pantallaHome2.PNG" alt="pantallaHome" class="imagenProyecto">
+                </div>
+                <button class="boton" data-bs-toggle="modal" data-bs-target="#modal-proyecto-1">Ver Más</button>
+            </div>
+
+            <div class="proyecto">
+                <div class="imagenProyecto-container">
+                    <img src="./img/Proyectos/FreeLancer/pantallaHome.PNG" alt="pantallaHome" class="imagenProyecto">
+                </div>
+                <button class="boton" data-bs-toggle="modal" data-bs-target="#modal-proyecto-2">Ver Más</button>
+            </div>
+        </div>
     </section>
 
     <footer id="contacto">
@@ -97,14 +160,129 @@
 
             <textarea id="mensajeContacto" placeholder="Mensaje" required></textarea>
 
-            <button type="submit">Enviar</button>
+            <button type="submit" class="boton">Enviar</button>
         </form>
 
         <div id="redesSociales-container">
             <a href="https://mx.linkedin.com/in/daronsalazar" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/shakeitloona" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="https://github.com/daronslzr" target="_blank"><i class="fa-brands fa-square-github"></i></a>
         </div>
     </footer>
+
+    <!-- Modal 1-->
+    <div class="modal fade" id="modal-proyecto-1" tabindex="-1" aria-labelledby="modal-proyecto1-label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-proyecto1-label">Proyecto: Play & Sing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- Carrusel de imágenes -->
+
+                    <div id="carrusel-proyecto-1" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./img/Proyectos/PlayNSing/pantallaTop.PNG" class="d-block w-100"
+                                    alt="Proyecto 1 - 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./img/Proyectos/PlayNSing/pantallaArtista.PNG" class="d-block w-100"
+                                    alt="Proyecto 1 - 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./img/Proyectos/PlayNSing/pantallaEventos.PNG" class="d-block w-100"
+                                    alt="Proyecto 1 - 3">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carrusel-proyecto-1"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carrusel-proyecto-1"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+                    <!-- Contenido del modal aquí -->
+
+                    <div class="row text-small p-1">
+                        <div class="col colorFondoSecundario text-white text-center p-2 m-2">HTML</div>
+                        <div class="col colorFondoSecundario text-white text-center p-2 m-2">CSS</div>
+                        <div class="col colorFondoSecundario text-white text-center p-2 m-2">JavaScript</div>
+                    </div>
+
+
+                    <ul class="list-group text-small">
+                        <li class="list-group-item listaHeaderColor fuenteNegrita">Caracteristicas:</li>
+                        <li class="list-group-item"><span class="fuenteNegrita">Duración de Proyecto:
+                            </span>Agosto-Septiembre 2023</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2-->
+    <div class="modal fade" id="modal-proyecto-2" tabindex="-1" aria-labelledby="modal-proyecto2-label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-proyecto2-label">Proyecto: Freelancer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- Carrusel de imágenes -->
+
+                    <div id="carrusel-proyecto-2" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./img/Proyectos/FreeLancer/pantallaServicios.PNG" class="d-block w-100"
+                                    alt="Proyecto 2 - 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./img/Proyectos/FreeLancer/pantallaContacto.PNG" class="d-block w-100"
+                                    alt="Proyecto 2 - 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carrusel-proyecto-2"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carrusel-proyecto-2"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+                    <!-- Contenido del modal aquí -->
+
+                    <div class="row text-small p-1">
+                        <div class="col colorFondoSecundario text-white text-center p-2 m-2">HTML</div>
+                        <div class="col colorFondoSecundario text-white text-center p-2 m-2">CSS</div>
+                    </div>
+
+
+                    <ul class="list-group text-small">
+                        <li class="list-group-item listaHeaderColor fuenteNegrita">Caracteristicas:</li>
+                        <li class="list-group-item"><span class="fuenteNegrita">Duración de Proyecto:
+                            </span>Febrero 2023</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

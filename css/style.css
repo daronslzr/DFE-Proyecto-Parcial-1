@@ -1,4 +1,4 @@
-:root{
+:root {
     --fuentePrincipal: 'Roboto', sans-serif;
 
     --colorPrincipal: #008a5a;
@@ -8,6 +8,7 @@
     --colorSecundario-light: hsl(204, 42%, 50%);
 
     --colorTerciario: #A1869E;
+    --colorTerciario-light: hsl(307, 13%, 80%);
 
 
     --colorFondo: #D9D9D9;
@@ -19,43 +20,76 @@
     --heightHeader: 70px;
 }
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     border: 0;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family: var(--fuentePrincipal);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     background-color: var(--colorFondo);
     color: var(--negro);
 }
 
+h1,
+h2,
+h3 {
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+}
+
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
 /* #region GENERAL*/
-.textoDerecha{
+.textoDerecha {
     text-align: end;
 }
+
 /* #endregion GENERAL*/
 
 /* #region ENCABEZADOS */
-h1{
+h1 {
     font-weight: 600;
     font-size: 4rem;
     color: #008A5A;
     text-transform: uppercase;
 }
+
+h2 {
+    font-size: 2rem;
+}
+
+.boton {
+    background-color: var(--colorTerciario);
+    color: var(--blanco);
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.boton:hover {
+    background-color: var(--colorSecundario-light);
+}
+
 /* #endregion ENCABEZADOS*/
 
 
 /* #region HEADER*/
-#header-container{
+#header-container {
     position: fixed;
     width: 100%;
     height: var(--heightHeader);
@@ -64,132 +98,266 @@ h1{
     display: flex;
     align-items: center;
 
-    background-color: var(--blanco);   
+    background-color: var(--blanco);
     z-index: 1;
 }
 
-nav{
+nav {
     font-size: 1.5rem;
     width: 100%;
 }
 
-nav ul{
-    list-style:none;
+nav ul {
+    list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-nav a{
+nav a {
     text-decoration: none;
     color: #008A5A;
     font-weight: 500;
 }
+
 /* #endregion HEADER*/
 
 /* #region SECCIONES*/
-section{
+section {
     scroll-margin-top: var(--heightHeader);
 }
-section:not(#home), footer{
+
+section:not(#home),
+footer {
     padding: var(--heightHeader);
 }
+
 /* #endregion SECCIONES*/
 
 /* #region HOME*/
-#home{
+#home {
+    padding: 0 2rem;
     padding-top: var(--heightHeader);
 
     background-color: #008A5A;
     height: 100vh;
 
-    display: flex;
-    flex-direction: row;
-
+    display: grid;
+    grid-template-areas: "homeTexto imagenHome-container";
+    justify-items: center;
     align-items: center;
-    justify-content: space-evenly;
 }
 
-#homeTexto > h1, #homeTexto > h2{
+#homeTexto {
+    grid-area: homeTexto;
+}
+
+#homeTexto>h1,
+#homeTexto>h2 {
     color: var(--blanco);
     text-transform: none;
 }
 
-#homeTexto > h2{
+#homeTexto>h2 {
     font-weight: 300;
     font-style: italic;
 }
 
-#imagenHome-container{
-    
+
+#imagenHome-container {
+    grid-area: imagenHome-container;
+    width: 35vw;
+    aspect-ratio: 1 / 1;
 }
 
-#imagenHome-container > img{
-    width: 40vw;
-    height: 80vh;
-    object-fit:cover;
+#imagenHome-container>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     object-position: top;
-    /*width: 216px;
-    height: 324px;*/
 }
+
+
 /* #endregion HOME*/
 
 /* #region ACERCA*/
-#acercaDeMi{
-
+#acercaDeMi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+#acercaDeMi>h1 {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+#acerca-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    width: 70vw;
+}
+
+.componenteAcerca {
+    padding: 2rem;
+    background-color: var(--blanco);
+    border-bottom: 10px solid var(--colorPrincipal);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.componenteAcerca:nth-child(1) {
+    grid-column: span 2;
+    background-color: var(--colorSecundario);
+    color: var(--blanco);
+    border-bottom: none;
+}
+
+.colorFondoSecundario {
+    background-color: var(--colorSecundario);
+    opacity: 0.8;
+}
+
+.fuenteNegrita {
+    font-weight: bold;
+}
+
+.fuenteItalica {
+    font-style: italic;
+}
+
 /* #endregion ACERCA*/
 
 /* #region HABILIDADES */
-#habilidades{
+#habilidades {
     background-image: linear-gradient(90deg, var(--colorSecundario-light), var(--colorPrincipal));
 }
-#habilidades > h1{
+
+#habilidades>h1 {
     color: var(--blanco);
     margin-bottom: 3rem;
 }
 
-#habilidades-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+/*#habilidadesGeneral-container{
+    
+}*/
+
+.habilidades-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    width: 100%;
 }
 
-.habilidadesCategoria{
+.habilidades-container-arriba {
+    margin-bottom: 4rem;
+}
+
+.habilidades-container-arriba>.habilidadesCategoria:nth-child(2) {
+    grid-column: 3;
+}
+
+.habilidades-container-arriba>.habilidadesCategoria:nth-child(3) {
+    grid-column: 5;
+}
+
+.habilidades-container-abajo>.habilidadesCategoria:nth-child(1) {
+    grid-column: 2;
+}
+
+.habilidades-container-abajo>.habilidadesCategoria:nth-child(2) {
+    grid-column: 4;
+}
+
+
+.habilidadesCategoria {
     display: flex;
     flex-direction: column;
+
+    width: 250px;
+    height: auto;
 
     background-color: var(--blanco);
     padding: 1rem;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
 }
 
-.habilidadesCategoria > h2{
+.habilidadesCategoria>h2 {
+    font-size: 1.5rem;
     color: var(--negro);
+    text-align: center;
 }
 
-.habilidadesCategoria > ul{
+.habilidadesCategoria>ul {
     list-style: none;
 
     display: flex;
     flex-direction: column;
 }
 
-.habilidadesCategoria > i{
+.fa-solid {
     font-size: 2rem;
     color: var(--colorSecundario);
     text-align: center;
     margin: 1.5rem;
 }
 
-.habilidad{
+.habilidad {
     font-style: italic;
     text-align: center;
 }
+
 /* #region HABILIDADES */
 
+/* #region EXPERIENCIA*/
+#experiencia>h1 {
+    margin-bottom: 3rem;
+}
+
+#proyectos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+}
+
+.proyecto {
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--blanco);
+    padding: 1rem;
+    row-gap: 1rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.imagenProyecto-container {
+    width: 100%;
+    aspect-ratio: 17 / 8;
+}
+
+.imagenProyecto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* #region CARRUSEL*/
+.listaHeaderColor {
+    background-color: var(--colorPrincipal);
+    color: var(--blanco);
+    opacity: 0.8;
+}
+
+/* #endregion CARRUSEL*/
+
+/* #endregion EXPERIENCIA*/
+
+
 /* #region FOOTER*/
-footer{
+footer {
     background-color: var(--colorSecundario);
 
     display: flex;
@@ -197,12 +365,12 @@ footer{
     align-items: center;
 }
 
-footer > h1{
+footer>h1 {
     color: var(--blanco);
 }
 
-#contacto-form{
-    width: 30vw;
+#contacto-form {
+    width: 40vw;
 
     display: flex;
     flex-direction: column;
@@ -211,28 +379,129 @@ footer > h1{
     margin: 1rem 0;
 }
 
-input, textarea{
+input,
+textarea {
     padding: 0.5rem;
     border-radius: 0.25rem;
 }
 
-textarea{
+textarea {
     resize: none;
 }
 
-#redesSociales-container{
+#redesSociales-container {
     display: flex;
     flex-direction: row;
     column-gap: 1rem;
 }
 
-.fa-brands{
+.fa-brands {
     font-size: 4rem;
     color: var(--blanco);
 }
 
-.fa-brands:hover{
+.fa-brands:hover {
     color: var(--blancoTransparente);
 }
 
 /* #endregion FOOTER*/
+
+/* #region RESPONSIVE DESIGN */
+@media screen and (max-width: 1024px) {
+
+    /* #region GENERAL*/
+    .textoCentro {
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    /* #endregion GENERAL*/
+
+    /* #region HOME*/
+    #home {
+        grid-template-areas:
+            "imagenHome-container"
+            "homeTexto";
+    }
+
+    #homeTexto>h1,
+    #homeTexto>h2 {
+        text-align: center;
+    }
+
+    #imagenHome-container {
+        width: 50vw;
+    }
+
+    /* #endregion HOME */
+
+    /* #region ACERCA */
+    #acerca-grid-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* #endregion ACERCA */
+
+    /* #region HABILIDADES */
+    .habilidades-container {
+        display: contents;
+    }
+
+    #habilidadesGeneral-container {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 2rem;
+        justify-items: center;
+    }
+
+    .habilidades-container-arriba>.habilidadesCategoria:nth-child(2),
+    .habilidades-container-arriba>.habilidadesCategoria:nth-child(3),
+    .habilidades-container-abajo>.habilidadesCategoria:nth-child(1),
+    .habilidades-container-abajo>.habilidadesCategoria:nth-child(2) {
+        grid-column: auto;
+    }
+
+    /* #endregion HABILIDADES */
+
+    /* #region FOOTER */
+    #contacto-form {
+        width: 50vw;
+    }
+
+    /* #endregion FOOTER */
+}
+
+@media screen and (max-width: 768px) {
+
+    /* #region HEADER */
+    nav ul {
+        justify-content: space-between;
+    }
+
+    /* #endregion HEADER */
+
+    /* #region HOME*/
+    #imagenHome-container {
+        width: 60vw;
+    }
+
+    /* #endregion HOME */
+
+    /* #region HABILIDADES */
+    #habilidadesGeneral-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* #endregion HABILIDADES */
+
+    /* #region FOOTER */
+    #contacto-form {
+        width: 60vw;
+    }
+
+    /* #endregion FOOTER */
+}
+
+/* #endregion RESPONSIVE DESIGN */
